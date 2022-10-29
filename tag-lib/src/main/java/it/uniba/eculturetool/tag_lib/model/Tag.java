@@ -23,4 +23,36 @@ public class Tag {
         this.color = color;
         this.icon = icon;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public long getColor() {
+        return color;
+    }
+
+    public void setColor(long color) {
+        this.color = color;
+    }
+
+    public long getIcon() {
+        return icon;
+    }
+
+    public void setIcon(long icon) {
+        this.icon = icon;
+    }
 }
