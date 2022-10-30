@@ -1,0 +1,29 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml:2:1-7:12
+INJECTED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml:2:1-7:12
+INJECTED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml:2:1-7:12
+	package
+		ADDED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml:3:5-44
+		INJECTED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml
+		INJECTED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml:5:5-66
+	android:name
+		ADDED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml:5:22-64
+uses-sdk
+INJECTED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml
+INJECTED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml
+INJECTED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml
+INJECTED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml
+		ADDED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml
+		INJECTED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml
+		ADDED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml
+		INJECTED from /mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml

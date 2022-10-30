@@ -12,5 +12,5 @@ import retrofit2.http.POST;
 public interface Translator {
     @FormUrlEncoded
     @POST("/v2/translate")
-    Call<List<TranslatedText>> translate(@Header("Authorization: DeepL-Auth-Key ") String authKey, @Field("text") String sourceText, @Field("target_lang") String targetLang);
+    Call<List<TranslatedText>> translate(@Header("Authorization:DeepL-Auth-Key") String authKey, @Field("text") String sourceText, @Field("target_lang") String targetLang);
 }
