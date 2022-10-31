@@ -6,6 +6,4 @@
         android:minSdkVersion="28"
         android:targetSdkVersion="32" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
 </manifest>

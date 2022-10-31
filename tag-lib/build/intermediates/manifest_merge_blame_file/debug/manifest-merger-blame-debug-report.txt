@@ -8,8 +8,4 @@
 7        android:targetSdkVersion="32" />
 7-->/mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml
 8
-9    <uses-permission android:name="android.permission.INTERNET" />
-9-->/mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml:5:5-66
-9-->/mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml:5:22-64
-10
-11</manifest>
+9</manifest>

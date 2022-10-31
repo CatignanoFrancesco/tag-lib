@@ -6,18 +6,18 @@ import com.google.gson.annotations.SerializedName;
 public class TranslatedText {
     @SerializedName("detected_source_language")
     @Expose
-    private String sourceLanguage;
+    private String detectedSourceLanguage;
 
     @SerializedName("text")
     @Expose
     private String text;
 
-    public String getSourceLanguage() {
-        return sourceLanguage;
+    public String getDetectedSourceLanguage() {
+        return detectedSourceLanguage;
     }
 
-    public void setSourceLanguage(String sourceLanguage) {
-        this.sourceLanguage = sourceLanguage;
+    public void setDetectedSourceLanguage(String detectedSourceLanguage) {
+        this.detectedSourceLanguage = detectedSourceLanguage;
     }
 
     public String getText() {

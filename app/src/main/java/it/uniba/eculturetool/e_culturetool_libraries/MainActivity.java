@@ -1,13 +1,37 @@
 package it.uniba.eculturetool.e_culturetool_libraries;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import it.uniba.eculturetool.tag_lib.facade.TextMaker;
+import it.uniba.eculturetool.tag_lib.model.LanguageTag;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        testTranslation();
+    }
+
+    private void testTranslation() {
+        TextMaker textMaker = TextMaker.getInstance(null);
+        List<LanguageTag> tags = new ArrayList<>();
+        String source = "Il Louvre è il museo più famoso al mondo. Ogni anno conta circa 9,6 milioni di visitatori!";
+
+        tags.add(new LanguageTag(0, "English", "EN"));
+        textMaker.generateTexts(
+                source,
+                tags,
+                texts -> Log.d(TAG, "testTranslation: source: " + source + "\ntranslated text: " + texts.get("EN")),
+                err -> {}
+        );
     }
 }
