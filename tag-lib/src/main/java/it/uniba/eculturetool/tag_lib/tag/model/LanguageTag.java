@@ -1,4 +1,4 @@
-package it.uniba.eculturetool.tag_lib.model;
+package it.uniba.eculturetool.tag_lib.tag.model;
 
 public class LanguageTag extends Tag {
     private String language;

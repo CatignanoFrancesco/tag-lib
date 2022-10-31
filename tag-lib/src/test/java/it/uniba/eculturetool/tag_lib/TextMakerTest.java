@@ -9,8 +9,8 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.uniba.eculturetool.tag_lib.facade.TextMaker;
-import it.uniba.eculturetool.tag_lib.model.LanguageTag;
+import it.uniba.eculturetool.tag_lib.textmaker.facade.TextMaker;
+import it.uniba.eculturetool.tag_lib.tag.model.LanguageTag;
 
 public class TextMakerTest {
     private static final String TAG = TextMakerTest.class.getSimpleName();

@@ -1,6 +1,6 @@
-package it.uniba.eculturetool.tag_lib.interfaces;
+package it.uniba.eculturetool.tag_lib.textmaker.interfaces;
 
-import it.uniba.eculturetool.tag_lib.model.Translations;
+import it.uniba.eculturetool.tag_lib.textmaker.model.Translations;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

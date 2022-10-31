@@ -1,9 +1,9 @@
-package it.uniba.eculturetool.tag_lib.facade;
+package it.uniba.eculturetool.tag_lib.tag.interfaces;
 
 import java.util.Set;
 
-import it.uniba.eculturetool.tag_lib.model.LanguageTag;
-import it.uniba.eculturetool.tag_lib.model.Tag;
+import it.uniba.eculturetool.tag_lib.tag.model.LanguageTag;
+import it.uniba.eculturetool.tag_lib.tag.model.Tag;
 
 /**
  * Questa interfaccia contiene tutti i metodi per memorizzare in un database di qualsiasi genere, i dati relativi ai tag.

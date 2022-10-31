@@ -1,9 +1,11 @@
-package it.uniba.eculturetool.tag_lib.model;
+package it.uniba.eculturetool.tag_lib.textmaker.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
+
+import it.uniba.eculturetool.tag_lib.textmaker.model.TranslatedText;
 
 public class Translations {
     @SerializedName("translations")

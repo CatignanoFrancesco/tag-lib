@@ -1,9 +1,8 @@
-package it.uniba.eculturetool.tag_lib.facade;
+package it.uniba.eculturetool.tag_lib.textmaker.facade;
 
 import android.os.StrictMode;
 import android.util.Log;
 
-import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -11,10 +10,10 @@ import java.util.Map;
 
 import it.uniba.eculturetool.tag_lib.interfaces.FailureListener;
 import it.uniba.eculturetool.tag_lib.interfaces.SuccessDataListener;
-import it.uniba.eculturetool.tag_lib.interfaces.Translator;
-import it.uniba.eculturetool.tag_lib.model.LanguageTag;
-import it.uniba.eculturetool.tag_lib.model.TranslatedText;
-import it.uniba.eculturetool.tag_lib.model.Translations;
+import it.uniba.eculturetool.tag_lib.textmaker.interfaces.Translator;
+import it.uniba.eculturetool.tag_lib.tag.model.LanguageTag;
+import it.uniba.eculturetool.tag_lib.textmaker.model.TranslatedText;
+import it.uniba.eculturetool.tag_lib.textmaker.model.Translations;
 import okhttp3.OkHttpClient;
 import okhttp3.Protocol;
 import retrofit2.Call;
