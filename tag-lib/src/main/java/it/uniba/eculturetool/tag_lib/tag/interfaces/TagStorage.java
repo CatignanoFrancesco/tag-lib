@@ -14,6 +14,8 @@ public interface TagStorage {
     Set<Tag> getAllTags();
     Set<Tag> getGeneralTags();
     Set<LanguageTag> getLanguageTags();
+    Set<LanguageTag> getPlaceLanguages(String placeId);
+    Set<Tag> getPathTags(String pathId);
     void updateTag(Tag tag);
     void deleteTagById(int id);
 }
