@@ -49,24 +49,26 @@ public class TextMaker {
 
         Translator translator = retrofit.create(Translator.class);
 
-        Call<Translations> call = translator.translate("DeepL-Auth-Key " + authKey, sourceText, tags.get(0).getLanguage());
-        call.enqueue(new Callback<Translations>() {
-            @Override
-            public void onResponse(Call<Translations> call, Response<Translations> response) {
-                Translations translations = response.body();
+        for(LanguageTag languageTag : tags) {
+            Call<Translations> call = translator.translate("DeepL-Auth-Key " + authKey, sourceText, languageTag.getLanguage());
+            call.enqueue(new Callback<Translations>() {
+                @Override
+                public void onResponse(Call<Translations> call, Response<Translations> response) {
+                    Translations translations = response.body();
 
-                for(TranslatedText translatedText : translations.getTranslatedTextList()) {
-                    texts.put(tags.get(0).getLanguage(), translatedText.getText());
+                    for(TranslatedText translatedText : translations.getTranslatedTextList()) {
+                        texts.put(languageTag.getLanguage(), translatedText.getText());
+                    }
+                    successListener.execute(texts);
                 }
-                successListener.execute(texts);
-            }
 
-            @Override
-            public void onFailure(Call<Translations> call, Throwable t) {
-                Log.e(TAG, "onFailure: message: " + call + ", exception: ", t);
-                failureListener.execute(t.getMessage());
-            }
-        });
+                @Override
+                public void onFailure(Call<Translations> call, Throwable t) {
+                    Log.e(TAG, "onFailure: message: " + call + ", exception: ", t);
+                    failureListener.execute(t.getMessage());
+                }
+            });
+        }
     }
 
     public Map<String, String> getTexts() {
