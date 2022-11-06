@@ -36,6 +36,8 @@ public class TextMaker {
     private Map<String, String> texts = new HashMap<>();
 
     public void generateTexts(String sourceText, List<LanguageTag> tags, SuccessDataListener<Map<String, String>> successListener, FailureListener failureListener) {
+        texts.clear();  // Pulizia dell'hashmap
+
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
