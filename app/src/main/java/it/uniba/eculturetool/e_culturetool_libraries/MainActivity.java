@@ -23,11 +23,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void testTranslation() {
-        TextMaker textMaker = TextMaker.getInstance(null);
+        TextMaker textMaker = TextMaker.getInstance(getString(R.string.auth_key));
         List<LanguageTag> tags = new ArrayList<>();
-        String source = "Il Louvre è il museo più famoso al mondo. Ogni anno conta circa 9,6 milioni di visitatori!";
+        String source = "La galleria degli Uffizi è il museo piu famoso d'Italia";
 
         tags.add(new LanguageTag(0, Languages.get(Languages.ENGLISH), Languages.ENGLISH));
+        tags.add(new LanguageTag(1, Languages.get(Languages.GERMAN), Languages.GERMAN));
         textMaker.generateTexts(
                 source,
                 tags,

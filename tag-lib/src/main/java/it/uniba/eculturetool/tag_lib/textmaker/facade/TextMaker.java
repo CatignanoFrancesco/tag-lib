@@ -3,6 +3,8 @@ package it.uniba.eculturetool.tag_lib.textmaker.facade;
 import android.os.StrictMode;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -53,17 +55,24 @@ public class TextMaker {
             Call<Translations> call = translator.translate("DeepL-Auth-Key " + authKey, sourceText, languageTag.getLanguage());
             call.enqueue(new Callback<Translations>() {
                 @Override
-                public void onResponse(Call<Translations> call, Response<Translations> response) {
+                public void onResponse(@NonNull Call<Translations> call, @NonNull Response<Translations> response) {
                     Translations translations = response.body();
+
+                    if(translations == null) {
+                        Log.e(TAG, "onResponse: " + response.message());
+                        failureListener.execute(response.message());
+                        return;
+                    }
 
                     for(TranslatedText translatedText : translations.getTranslatedTextList()) {
                         texts.put(languageTag.getLanguage(), translatedText.getText());
+                        if(!texts.containsKey(translatedText.getDetectedSourceLanguage())) texts.put(translatedText.getDetectedSourceLanguage(), sourceText);
                     }
                     successListener.execute(texts);
                 }
 
                 @Override
-                public void onFailure(Call<Translations> call, Throwable t) {
+                public void onFailure(@NonNull Call<Translations> call, @NonNull Throwable t) {
                     Log.e(TAG, "onFailure: message: " + call + ", exception: ", t);
                     failureListener.execute(t.getMessage());
                 }
