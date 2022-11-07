@@ -12,7 +12,7 @@ public final class Languages {
     // Costanti per le stringhe da usare per le traduzioni
     public static final String ITALIAN = "IT";
     public static final String ENGLISH = "EN";
-    public static final String SPANISH = "SP";
+    public static final String SPANISH = "ES";
     public static final String GERMAN = "DE";
     public static final String FRENCH = "FR";
 

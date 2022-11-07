@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         String source = "La galleria degli Uffizi è il museo piu famoso d'Italia";
 
         tags.add(new LanguageTag(0, Languages.get(Languages.ENGLISH), Languages.ENGLISH));
-        tags.add(new LanguageTag(1, Languages.get(Languages.GERMAN), Languages.GERMAN));
+        tags.add(new LanguageTag(1, Languages.get(Languages.SPANISH), Languages.GERMAN));
 
         for(LanguageTag languageTag : tags) {
             textMaker.generateText(
