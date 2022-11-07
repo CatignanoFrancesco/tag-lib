@@ -1,5 +1,6 @@
 package it.uniba.eculturetool.tag_lib.textmaker.facade;
 
+import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
 
@@ -10,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import it.uniba.eculturetool.tag_lib.interfaces.FailureDataListener;
 import it.uniba.eculturetool.tag_lib.interfaces.FailureListener;
 import it.uniba.eculturetool.tag_lib.interfaces.SuccessDataListener;
 import it.uniba.eculturetool.tag_lib.textmaker.interfaces.Translator;
@@ -34,6 +36,54 @@ public class TextMaker {
     private static TextMaker instance;
     private static String authKey;
     private Map<String, String> texts = new HashMap<>();
+
+    /**
+     * Traduce il testo ricevuto in input
+     * @param sourceText Il testo da tradurre
+     * @param languageTag Il tag relativo alla lingua target
+     * @param successListener L'interfaccia per gestire il successo
+     * @param failureListener L'interfaccia per gestire il fallimento
+     */
+    public void generateText(String sourceText, LanguageTag languageTag, SuccessDataListener<Bundle> successListener, FailureDataListener<LanguageTag> failureListener) {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .protocols(Collections.singletonList(Protocol.HTTP_1_1))
+                .build();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .client(client)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        Translator translator = retrofit.create(Translator.class);
+
+        Call<Translations> call = translator.translate("DeepL-Auth-Key " + authKey, sourceText, languageTag.getLanguage());
+        call.enqueue(new Callback<Translations>() {
+            @Override
+            public void onResponse(@NonNull Call<Translations> call, @NonNull Response<Translations> response) {
+                Translations translations = response.body();
+
+                if(translations == null) {
+                    Log.e(TAG, "onResponse: " + response.message());
+                    failureListener.execute(languageTag);
+                    return;
+                }
+
+                Bundle bundle = new Bundle();
+                bundle.putString(languageTag.getLanguage(), translations.getTranslatedTextList().get(0).getText());
+                successListener.execute(bundle);
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Translations> call, @NonNull Throwable t) {
+                Log.e(TAG, "onFailure: message: " + call + ", exception: ", t);
+                failureListener.execute(languageTag);
+            }
+        });
+    }
 
     @Deprecated
     public void generateTexts(String sourceText, List<LanguageTag> tags, SuccessDataListener<Map<String, String>> successListener, FailureListener failureListener) {

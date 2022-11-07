@@ -29,11 +29,14 @@ public class MainActivity extends AppCompatActivity {
 
         tags.add(new LanguageTag(0, Languages.get(Languages.ENGLISH), Languages.ENGLISH));
         tags.add(new LanguageTag(1, Languages.get(Languages.GERMAN), Languages.GERMAN));
-        textMaker.generateTexts(
-                source,
-                tags,
-                texts -> Log.d(TAG, "testTranslation: source: " + source + "\ntranslated text: " + texts.get(Languages.ENGLISH)),
-                err -> {}
-        );
+
+        for(LanguageTag languageTag : tags) {
+            textMaker.generateText(
+                    source,
+                    languageTag,
+                    bundle -> Log.d(TAG, "testTranslation: " + bundle.getString(languageTag.getLanguage())),
+                    tag -> Log.e(TAG, "testTranslation: error on: " + tag.getTitle())
+            );
+        }
     }
 }
