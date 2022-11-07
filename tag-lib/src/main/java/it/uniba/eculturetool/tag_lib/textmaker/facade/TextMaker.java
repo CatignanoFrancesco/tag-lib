@@ -35,6 +35,7 @@ public class TextMaker {
     private static String authKey;
     private Map<String, String> texts = new HashMap<>();
 
+    @Deprecated
     public void generateTexts(String sourceText, List<LanguageTag> tags, SuccessDataListener<Map<String, String>> successListener, FailureListener failureListener) {
         texts.clear();  // Pulizia dell'hashmap
 
