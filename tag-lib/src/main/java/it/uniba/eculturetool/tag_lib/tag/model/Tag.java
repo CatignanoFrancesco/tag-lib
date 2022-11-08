@@ -1,10 +1,34 @@
 package it.uniba.eculturetool.tag_lib.tag.model;
 
-public class Tag {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class Tag implements Serializable, Parcelable {
     private int id;
     private String title;
     private long color; // Il valore sarà qualcosa tipo R.color.x
-    private long icon;   // Il valore sarà qualcosa tipo R.drawable.x
+    private long icon;   // Il valore sarà qualcosa tipo R.drawable.y
+
+    public static final Creator<Tag> CREATOR = new Creator<Tag>() {
+        @Override
+        public Tag createFromParcel(Parcel in) {
+            return new Tag(in);
+        }
+
+        @Override
+        public Tag[] newArray(int size) {
+            return new Tag[size];
+        }
+    };
+
+    protected Tag(Parcel in) {
+        id = in.readInt();
+        title = in.readString();
+        color = in.readLong();
+        icon = in.readLong();
+    }
 
     public Tag(int id, String title) {
         this.id = id;
@@ -54,5 +78,18 @@ public class Tag {
 
     public void setIcon(long icon) {
         this.icon = icon;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeString(title);
+        parcel.writeLong(color);
+        parcel.writeLong(icon);
     }
 }
