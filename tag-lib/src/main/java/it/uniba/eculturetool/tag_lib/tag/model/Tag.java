@@ -86,7 +86,7 @@ public class Tag implements Serializable, Parcelable {
         if (this == o) return true;
         if (!(o instanceof Tag)) return false;
         Tag tag = (Tag) o;
-        return id == tag.id && title.equals(tag.title);
+        return id == tag.id;
     }
 
     @Override
