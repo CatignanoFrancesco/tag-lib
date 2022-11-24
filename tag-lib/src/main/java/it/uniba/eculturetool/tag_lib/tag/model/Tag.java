@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Tag implements Serializable, Parcelable {
     private int id;
@@ -78,6 +79,19 @@ public class Tag implements Serializable, Parcelable {
 
     public void setIcon(long icon) {
         this.icon = icon;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Tag)) return false;
+        Tag tag = (Tag) o;
+        return id == tag.id && title.equals(tag.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title);
     }
 
     @Override
