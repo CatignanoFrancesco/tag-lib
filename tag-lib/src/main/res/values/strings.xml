@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lingue_descrizione">Description languages</string>
+    <string name="aggiungi_lingua">+ Add a language</string>
+    <string name="tag" translatable="false">Tag</string>
+    <string name="aggiungi_tag">+ Add a tag</string>
+    <string name="conferma_eliminazione_tag">Are you sure you want to delete the tag %1$s?</string>
+    <string name="successo_traduzione">Successful translation for the language: </string>
+    <string name="errore_traduzione">It was not possible to translate this language: </string>
+    <string name="errore_traduzione_una_lingua">Add at least one other language to translate</string>
+    <string name="si_elimina">Yes, delete</string>
+    <string name="no_chiudi">No, close</string>
+    <string name="crea_tag">Create a new Tag</string>
+    <string name="titolo_tag">Tag title</string>
+    <string name="icona_tag">Tag icon</string>
+    <string name="colore_tag">Tag color</string>
+    <string name="ok" translatable="false">OK</string>
+    <string name="cancel">Cancel</string>
+</resources>

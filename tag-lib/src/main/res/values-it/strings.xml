@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lingue_descrizione">Lingue della descrizione</string>
+    <string name="aggiungi_lingua">+ Aggiungi una lingua</string>
+    <string name="aggiungi_tag">+ Aggiungi un tag</string>
+    <string name="conferma_eliminazione_tag">Sei sicuro di voler eliminare il tag %1$s?</string>
+    <string name="successo_traduzione">Traduzione avvenuta con successo per la lingua: </string>
+    <string name="errore_traduzione">Non è stato possibile tradurre la seguente lingua: </string>
+    <string name="errore_traduzione_una_lingua">Aggiungi almeno un\'altra lingua per tradurre</string>
+    <string name="si_elimina">Sì, elimina</string>
+    <string name="no_chiudi">No, chiudi</string>
+    <string name="crea_tag">Crea un nuovo Tag</string>
+    <string name="titolo_tag">Titolo del Tag</string>
+    <string name="icona_tag">Icona del Tag</string>
+    <string name="colore_tag">Colore del Tag</string>
+    <string name="cancel">Chiudi</string>
+</resources>
