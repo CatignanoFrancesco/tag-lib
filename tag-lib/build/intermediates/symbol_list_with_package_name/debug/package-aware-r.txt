@@ -1,1 +1,22 @@
 it.uniba.eculturetool.tag_lib
+id check_box
+id chip_tag
+id multichoice_list_view
+layout add_tag_alert_item
+layout add_tag_alert_layout
+string aggiungi_lingua
+string aggiungi_tag
+string cancel
+string colore_tag
+string conferma_eliminazione_tag
+string crea_tag
+string errore_traduzione
+string errore_traduzione_una_lingua
+string icona_tag
+string lingue_descrizione
+string no_chiudi
+string ok
+string si_elimina
+string successo_traduzione
+string tag
+string titolo_tag

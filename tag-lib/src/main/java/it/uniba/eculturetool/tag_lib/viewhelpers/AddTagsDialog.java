@@ -1,19 +1,12 @@
 package it.uniba.eculturetool.tag_lib.viewhelpers;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.res.ColorStateList;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.CheckedTextView;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.RadioGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,12 +15,7 @@ import androidx.appcompat.app.AlertDialog;
 import com.google.android.material.chip.Chip;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import it.uniba.eculturetool.tag_lib.R;
 import it.uniba.eculturetool.tag_lib.tag.model.Tag;
