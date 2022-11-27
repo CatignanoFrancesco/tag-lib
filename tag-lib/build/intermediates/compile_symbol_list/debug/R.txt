@@ -1,3 +1,5 @@
+int color disabled 0x0
+int color green 0x0
 int id check_box 0x0
 int id chip_tag 0x0
 int id multichoice_list_view 0x0

@@ -1,5 +1,7 @@
 R_DEF: Internal format may change without notice
 local
+color disabled
+color green
 id check_box
 id chip_tag
 id multichoice_list_view

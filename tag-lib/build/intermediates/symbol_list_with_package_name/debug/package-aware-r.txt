@@ -1,4 +1,6 @@
 it.uniba.eculturetool.tag_lib
+color disabled
+color green
 id check_box
 id chip_tag
 id multichoice_list_view
