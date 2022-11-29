@@ -3,7 +3,7 @@
 3    package="it.uniba.eculturetool.tag_lib" >
 4
 5    <uses-sdk
-6        android:minSdkVersion="28"
+6        android:minSdkVersion="27"
 6-->/mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml
 7        android:targetSdkVersion="32" />
 7-->/mnt/E46608D76608AC7C/UNI/Tirocinio_e_tesi/Progetti/ECultureToolLibraries/tag-lib/src/main/AndroidManifest.xml

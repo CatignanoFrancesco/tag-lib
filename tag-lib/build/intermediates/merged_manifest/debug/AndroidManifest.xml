@@ -3,7 +3,7 @@
     package="it.uniba.eculturetool.tag_lib" >
 
     <uses-sdk
-        android:minSdkVersion="28"
+        android:minSdkVersion="27"
         android:targetSdkVersion="32" />
 
 </manifest>
