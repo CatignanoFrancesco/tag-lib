@@ -16,7 +16,7 @@ public interface AsyncTagStorage {
     void getAllTags(SuccessDataListener<Set<Tag>> onSuccessListener,  FailureDataListener<String> onFailureListener);
     void getGeneralTags(SuccessDataListener<Set<Tag>> onSuccessListener,  FailureDataListener<String> onFailureListener);
     void getLanguageTags(SuccessDataListener<Set<LanguageTag>> onSuccessListener,  FailureDataListener<String> onFailureListener);
-    void getPlaceLanguages(Object placeId, SuccessDataListener<Set<Tag>> onSuccessListener,  FailureDataListener<String> onFailureListener);
+    void getPlaceLanguages(Object placeId, SuccessDataListener<Set<LanguageTag>> onSuccessListener,  FailureDataListener<String> onFailureListener);
     void addPlaceLanguages(Object placeId, Set<LanguageTag> languageTags, SuccessDataListener<Void> onSuccessListener,  FailureDataListener<String> onFailureListener);
     void deletePlaceLanguages(Object placeId, Set<LanguageTag> languageTags, SuccessDataListener<Void> onSuccessListener,  FailureDataListener<String> onFailureListener);
     void getPathTags(Object pathId, SuccessDataListener<Set<Tag>> onSuccessListener,  FailureDataListener<String> onFailureListener);
