@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 
 import it.uniba.eculturetool.tag_lib.interfaces.FailureDataListener;
-import it.uniba.eculturetool.tag_lib.interfaces.FailureListener;
 import it.uniba.eculturetool.tag_lib.interfaces.SuccessDataListener;
 import it.uniba.eculturetool.tag_lib.textmaker.interfaces.Translator;
 import it.uniba.eculturetool.tag_lib.tag.model.LanguageTag;
@@ -86,7 +85,7 @@ public class TextMaker {
     }
 
     @Deprecated
-    public void generateTexts(String sourceText, List<LanguageTag> tags, SuccessDataListener<Map<String, String>> successListener, FailureListener failureListener) {
+    public void generateTexts(String sourceText, List<LanguageTag> tags, SuccessDataListener<Map<String, String>> successListener, FailureDataListener<String> failureListener) {
         texts.clear();  // Pulizia dell'hashmap
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
