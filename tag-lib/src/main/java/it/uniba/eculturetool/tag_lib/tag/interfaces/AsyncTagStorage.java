@@ -16,12 +16,12 @@ public interface AsyncTagStorage {
     void getAllTags(SuccessDataListener<Set<Tag>> onSuccessListener,  FailureDataListener<String> onFailureListener);
     void getGeneralTags(SuccessDataListener<Set<Tag>> onSuccessListener,  FailureDataListener<String> onFailureListener);
     void getLanguageTags(SuccessDataListener<Set<LanguageTag>> onSuccessListener,  FailureDataListener<String> onFailureListener);
-    void getPlaceLanguages(int placeId, SuccessDataListener<Set<Tag>> onSuccessListener,  FailureDataListener<String> onFailureListener);
-    void addPlaceLanguages(int placeId, Set<LanguageTag> languageTags, SuccessDataListener<Void> onSuccessListener,  FailureDataListener<String> onFailureListener);
-    void deletePlaceLanguages(int placeId, Set<LanguageTag> languageTags, SuccessDataListener<Void> onSuccessListener,  FailureDataListener<String> onFailureListener);
-    void getPathTags(int pathId, SuccessDataListener<Set<Tag>> onSuccessListener,  FailureDataListener<String> onFailureListener);
-    void addPathTags(int pathId, Set<Tag> tags, SuccessDataListener<Void> onSuccessListener,  FailureDataListener<String> onFailureListener);
-    void deletePathTags(int pathId, Set<Tag> tags, SuccessDataListener<Void> onSuccessListener,  FailureDataListener<String> onFailureListener);
+    void getPlaceLanguages(Object placeId, SuccessDataListener<Set<Tag>> onSuccessListener,  FailureDataListener<String> onFailureListener);
+    void addPlaceLanguages(Object placeId, Set<LanguageTag> languageTags, SuccessDataListener<Void> onSuccessListener,  FailureDataListener<String> onFailureListener);
+    void deletePlaceLanguages(Object placeId, Set<LanguageTag> languageTags, SuccessDataListener<Void> onSuccessListener,  FailureDataListener<String> onFailureListener);
+    void getPathTags(Object pathId, SuccessDataListener<Set<Tag>> onSuccessListener,  FailureDataListener<String> onFailureListener);
+    void addPathTags(Object pathId, Set<Tag> tags, SuccessDataListener<Void> onSuccessListener,  FailureDataListener<String> onFailureListener);
+    void deletePathTags(Object pathId, Set<Tag> tags, SuccessDataListener<Void> onSuccessListener,  FailureDataListener<String> onFailureListener);
     void updateTag(Tag tag, SuccessDataListener<Void> onSuccessListener,  FailureDataListener<String> onFailureListener);
-    void deleteTagById(int id, SuccessDataListener<Void> onSuccessListener,  FailureDataListener<String> onFailureListener);
+    void deleteTagById(Object id, SuccessDataListener<Void> onSuccessListener,  FailureDataListener<String> onFailureListener);
 }
