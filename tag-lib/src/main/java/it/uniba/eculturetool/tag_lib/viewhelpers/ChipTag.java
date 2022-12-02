@@ -101,6 +101,7 @@ public class ChipTag extends Chip {
         this.setCloseIconVisible(false);
         this.setClickable(false);
         this.setChipBackgroundColor(ColorStateList.valueOf(Color.parseColor(color)));
+        this.setChipIconVisible(true);
         this.setIconStartPadding(16);
         this.setChipIcon(new BitmapDrawable(context.getResources(), icon));
     }

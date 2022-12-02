@@ -2,6 +2,8 @@ package it.uniba.eculturetool.tag_lib.viewhelpers;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -131,9 +133,9 @@ public class AddTagsDialog extends AlertDialog {
                 listener.onCheck(tag);
             });
 
-            if(tag.getColor() != 0) {   // Imposto il colore e l'icona se sono presenti
-                viewHolder.chip.setChipBackgroundColor(ColorStateList.valueOf(context.getColor((int) tag.getColor())));
-                viewHolder.chip.setChipIconResource((int) tag.getIcon());
+            if(tag.getIconBitmap() != null) {   // Imposto il colore e l'icona se sono presenti
+                viewHolder.chip.setChipBackgroundColor(ColorStateList.valueOf(Color.parseColor(tag.getColorString())));
+                viewHolder.chip.setChipIcon(new BitmapDrawable(context.getResources(), tag.getIconBitmap()));
             }
             return convertView;
         }
