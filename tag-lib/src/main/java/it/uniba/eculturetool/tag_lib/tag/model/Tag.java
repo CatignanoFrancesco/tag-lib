@@ -11,8 +11,9 @@ public class Tag implements Serializable, Parcelable {
     private int id;
     private String title;
     private long colorResource; // Il valore sarà qualcosa tipo R.color.x
-    private long iconResource;   // Il valore sarà qualcosa tipo R.drawable.y
+    private long iconResource;  // Il valore sarà qualcosa tipo R.drawable.y
     private Bitmap icon;
+    private String iconName;
     private String color;
 
     public static final Creator<Tag> CREATOR = new Creator<Tag>() {
@@ -32,6 +33,8 @@ public class Tag implements Serializable, Parcelable {
         title = in.readString();
         color = in.readString();
         icon = in.readParcelable(getClass().getClassLoader());
+
+        iconName = title.toLowerCase();
     }
 
     public Tag(int id, String title) {
@@ -65,6 +68,8 @@ public class Tag implements Serializable, Parcelable {
         this.title = title;
         this.color = color;
         this.icon = icon;
+
+        iconName = title.toLowerCase();
     }
 
     public int getId() {
@@ -81,6 +86,7 @@ public class Tag implements Serializable, Parcelable {
 
     public void setTitle(String title) {
         this.title = title;
+        iconName = title.toLowerCase();
     }
 
     @Deprecated
@@ -108,6 +114,10 @@ public class Tag implements Serializable, Parcelable {
 
     public Bitmap getIconBitmap() {
         return icon;
+    }
+
+    public String getIconName() {
+        return iconName;
     }
 
     @Deprecated
