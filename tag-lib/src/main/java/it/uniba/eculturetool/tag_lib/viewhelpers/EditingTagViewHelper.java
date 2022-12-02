@@ -84,9 +84,11 @@ public class EditingTagViewHelper {
 
         tagViewData.getAddedTags().observe((LifecycleOwner) context, tags -> {
             // Se rimane un solo chip, lo rendo non eliminabile
-            ((ChipTag) chipGroup.getChildAt(0)).setCloseIconVisible(
-                    tagViewData.getAddedTags().getValue().size() != 1
-            );
+            if(chipGroup.getChildCount() != 0) {
+                ((ChipTag) chipGroup.getChildAt(0)).setCloseIconVisible(
+                        tagViewData.getAddedTags().getValue().size() != 1
+                );
+            }
         });
     }
 
