@@ -196,9 +196,9 @@ public class EditingTagViewHelper {
         for(Tag tag : tags) {
             ChipTag chipTag;
             if(enableChipClosing) {
-                chipTag = new ChipTag(context, tag, tag.getIcon(), tag.getColor(), this::onChipClose);
+                chipTag = new ChipTag(context, tag, tag.getIconBitmap(), tag.getColorString(), this::onChipClose);
             } else {
-                chipTag = new ChipTag(context, tag, tag.getIcon(), tag.getColor());
+                chipTag = new ChipTag(context, tag, tag.getIconBitmap(), tag.getColorString());
             }
 
             chipGroup.addView(chipTag);
@@ -237,7 +237,7 @@ public class EditingTagViewHelper {
             // Mostro il dialog
             new AddTagsDialog(context).showAddTagsDialog(tagViewData.getDialogTags(), (List<Tag> tagList) -> {
                 for (Tag tag : tagList) {
-                    chipGroup.addView(new ChipTag(context, tag, tag.getIcon(), tag.getColor(), this::onChipClose));
+                    chipGroup.addView(new ChipTag(context, tag, tag.getIconBitmap(), tag.getColorString(), this::onChipClose));
                     tagViewData.addTag(tag);
                 }
             });

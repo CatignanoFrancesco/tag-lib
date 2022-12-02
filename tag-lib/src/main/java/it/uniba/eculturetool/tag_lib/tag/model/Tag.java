@@ -1,5 +1,6 @@
 package it.uniba.eculturetool.tag_lib.tag.model;
 
+import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -9,8 +10,10 @@ import java.util.Objects;
 public class Tag implements Serializable, Parcelable {
     private int id;
     private String title;
-    private long color; // Il valore sarà qualcosa tipo R.color.x
-    private long icon;   // Il valore sarà qualcosa tipo R.drawable.y
+    private long colorResource; // Il valore sarà qualcosa tipo R.color.x
+    private long iconResource;   // Il valore sarà qualcosa tipo R.drawable.y
+    private Bitmap icon;
+    private String color;
 
     public static final Creator<Tag> CREATOR = new Creator<Tag>() {
         @Override
@@ -27,8 +30,8 @@ public class Tag implements Serializable, Parcelable {
     protected Tag(Parcel in) {
         id = in.readInt();
         title = in.readString();
-        color = in.readLong();
-        icon = in.readLong();
+        color = in.readString();
+        icon = in.readParcelable(getClass().getClassLoader());
     }
 
     public Tag(int id, String title) {
@@ -36,13 +39,28 @@ public class Tag implements Serializable, Parcelable {
         this.title = title;
     }
 
+    @Deprecated
     public Tag(int id, String title, long color) {
+        this.id = id;
+        this.title = title;
+        this.colorResource = color;
+    }
+
+    public Tag(int id, String title, String color) {
         this.id = id;
         this.title = title;
         this.color = color;
     }
 
+    @Deprecated
     public Tag(int id, String title, long color, long icon) {
+        this.id = id;
+        this.title = title;
+        this.colorResource = color;
+        this.iconResource = icon;
+    }
+
+    public Tag(int id, String title, String color, Bitmap icon) {
         this.id = id;
         this.title = title;
         this.color = color;
@@ -65,19 +83,39 @@ public class Tag implements Serializable, Parcelable {
         this.title = title;
     }
 
+    @Deprecated
     public long getColor() {
+        return colorResource;
+    }
+
+    public String getColorString() {
         return color;
     }
 
+    @Deprecated
     public void setColor(long color) {
+        this.colorResource = color;
+    }
+
+    public void setColor(String color) {
         this.color = color;
     }
 
+    @Deprecated
     public long getIcon() {
+        return iconResource;
+    }
+
+    public Bitmap getIconBitmap() {
         return icon;
     }
 
+    @Deprecated
     public void setIcon(long icon) {
+        this.iconResource = icon;
+    }
+
+    public void setIcon(Bitmap icon) {
         this.icon = icon;
     }
 
@@ -103,7 +141,7 @@ public class Tag implements Serializable, Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(id);
         parcel.writeString(title);
-        parcel.writeLong(color);
-        parcel.writeLong(icon);
+        parcel.writeString(color);
+        parcel.writeParcelable(icon, i);
     }
 }

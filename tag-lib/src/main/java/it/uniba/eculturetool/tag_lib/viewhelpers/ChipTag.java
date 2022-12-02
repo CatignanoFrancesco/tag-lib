@@ -2,6 +2,9 @@ package it.uniba.eculturetool.tag_lib.viewhelpers;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -18,6 +21,8 @@ public class ChipTag extends Chip {
     private OnCloseChipListener onCloseChipListener;
     private long iconResource;
     private long colorResource;
+    private Bitmap icon;
+    private String color;
 
     /**
      * Crea un tag per la visualizzazione, senza la possibilità di eliminare
@@ -57,7 +62,9 @@ public class ChipTag extends Chip {
      * @param tag Il tag
      * @param iconResource L'icona
      * @param colorResource Il colore del tag
+     * @deprecated Usa {@link #ChipTag(Context, Tag, Bitmap, String)}
      */
+    @Deprecated
     public ChipTag(Context context, Tag tag, long iconResource, long colorResource) {
         super(context);
 
@@ -78,12 +85,56 @@ public class ChipTag extends Chip {
      * Crea un tag per la visualizzazione, senza possibilità di eliminazione o selezione
      * @param context Il contesto
      * @param tag Il tag
+     * @param icon L'icona
+     * @param color Il colore del tag
+     */
+    public ChipTag(Context context, Tag tag, Bitmap icon, String color) {
+        super(context);
+
+        this.context = context;
+        this.tag = tag;
+        this.icon = icon;
+        this.color = color;
+
+        this.setText(tag.getTitle());
+        this.setText(tag.getTitle());
+        this.setCloseIconVisible(false);
+        this.setClickable(false);
+        this.setChipBackgroundColor(ColorStateList.valueOf(Color.parseColor(color)));
+        this.setIconStartPadding(16);
+        this.setChipIcon(new BitmapDrawable(context.getResources(), icon));
+    }
+
+    /**
+     * Crea un tag per la visualizzazione, senza possibilità di eliminazione o selezione
+     * @param context Il contesto
+     * @param tag Il tag
      * @param iconResource L'icona
      * @param colorResource Il colore del tag
      * @param onCloseChipListener Il comportamento del tag quando viene clicata l'icona di chiusura
+     * @deprecated Usa {@link #ChipTag(Context, Tag, Bitmap, String, OnCloseChipListener)}
      */
+    @Deprecated
     public ChipTag(Context context, Tag tag, long iconResource, long colorResource, OnCloseChipListener onCloseChipListener) {
         this(context, tag, iconResource, colorResource);
+
+        this.onCloseChipListener = onCloseChipListener;
+
+        this.setClickable(false);
+        this.setCloseIconVisible(true);
+        this.setOnCloseIconClickListener(this::closeTagAction);
+    }
+
+    /**
+     * Crea un tag per la visualizzazione, senza possibilità di eliminazione o selezione
+     * @param context Il contesto
+     * @param tag Il tag
+     * @param icon L'icona
+     * @param color Il colore del tag
+     * @param onCloseChipListener Il comportamento del tag quando viene clicata l'icona di chiusura
+     */
+    public ChipTag(Context context, Tag tag, Bitmap icon, String color, OnCloseChipListener onCloseChipListener) {
+        this(context, tag, icon, color);
 
         this.onCloseChipListener = onCloseChipListener;
 

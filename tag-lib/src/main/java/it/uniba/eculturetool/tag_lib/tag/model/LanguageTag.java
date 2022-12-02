@@ -1,5 +1,6 @@
 package it.uniba.eculturetool.tag_lib.tag.model;
 
+import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -28,12 +29,12 @@ public class LanguageTag extends Tag {
         this.language = language;
     }
 
-    public LanguageTag(int id, String title, long color, String language) {
+    public LanguageTag(int id, String title, String color, String language) {
         super(id, title, color);
         this.language = language;
     }
 
-    public LanguageTag(int id, String title, long color, long icon, String language) {
+    public LanguageTag(int id, String title, String color, Bitmap icon, String language) {
         super(id, title, color, icon);
         this.language = language;
     }
