@@ -88,14 +88,6 @@ public class EditingTagViewHelper {
         this.chipGroup = chipGroup;
 
         tagViewData.getAddedTags().observe((LifecycleOwner) context, tags -> {
-            if(tagViewData.getDialogTags().size() == 0) {
-                aggiungiTagButton.setClickable(false);
-                aggiungiTagButton.setTextColor(context.getColor(R.color.disabled));
-            } else {
-                aggiungiTagButton.setClickable(true);
-                aggiungiTagButton.setTextColor(context.getColor(R.color.green));
-            }
-
             // Se rimane un solo chip, lo rendo non eliminabile
             ((ChipTag) chipGroup.getChildAt(0)).setCloseIconVisible(
                     tagViewData.getAddedTags().getValue().size() != 1
@@ -113,6 +105,21 @@ public class EditingTagViewHelper {
     public EditingTagViewHelper(Context context, TagViewData tagViewData, ChipGroup chipGroup, Button aggiungiTagButton) {
         this(context, tagViewData, chipGroup);
         this.aggiungiTagButton = aggiungiTagButton;
+
+        tagViewData.getAddedTags().observe((LifecycleOwner) context, tags -> {
+            if(tagViewData.getDialogTags().size() == 0) {
+                aggiungiTagButton.setClickable(false);
+                aggiungiTagButton.setTextColor(context.getColor(R.color.disabled));
+            } else {
+                aggiungiTagButton.setClickable(true);
+                aggiungiTagButton.setTextColor(context.getColor(R.color.green));
+            }
+
+            // Se rimane un solo chip, lo rendo non eliminabile
+            ((ChipTag) chipGroup.getChildAt(0)).setCloseIconVisible(
+                    tagViewData.getAddedTags().getValue().size() != 1
+            );
+        });
     }
 
     /**
