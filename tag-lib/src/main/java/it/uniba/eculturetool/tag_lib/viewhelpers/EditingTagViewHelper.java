@@ -67,11 +67,6 @@ public class EditingTagViewHelper {
             } else {
                 aggiungiLinguaButton.setClickable(true);
                 aggiungiLinguaButton.setTextColor(context.getColor(R.color.green));
-
-                // Se rimane un solo chip, lo rendo non eliminabile
-                ((ChipTag) chipGroup.getChildAt(0)).setCloseIconVisible(
-                        languageTagViewData.getAddedLanguages().getValue().size() != 1
-                );
             }
         });
     }
