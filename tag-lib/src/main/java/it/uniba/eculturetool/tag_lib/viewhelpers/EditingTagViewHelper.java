@@ -61,13 +61,8 @@ public class EditingTagViewHelper {
 
         // Osservazione delle lingue aggiunte
         languageTagViewData.getAddedLanguages().observe((LifecycleOwner) context, languageCodes -> {
-            if(languageTagViewData.getDialogTags().size() == 0) {   // Se sono state aggiunte tutte le lingue...
-                aggiungiLinguaButton.setClickable(false);
-                aggiungiLinguaButton.setTextColor(context.getColor(R.color.disabled));
-            } else {
-                aggiungiLinguaButton.setClickable(true);
-                aggiungiLinguaButton.setTextColor(context.getColor(R.color.green));
-            }
+            // Se sono state aggiunte tutte le lingue...
+            aggiungiLinguaButton.setClickable(!languageTagViewData.getDialogTags().isEmpty());
         });
     }
 
