@@ -104,13 +104,7 @@ public class EditingTagViewHelper {
         this.aggiungiTagButton = aggiungiTagButton;
 
         tagViewData.getAddedTags().observe((LifecycleOwner) context, tags -> {
-            if(tagViewData.getDialogTags().size() == 0) {
-                aggiungiTagButton.setClickable(false);
-                aggiungiTagButton.setTextColor(context.getColor(R.color.disabled));
-            } else {
-                aggiungiTagButton.setClickable(true);
-                aggiungiTagButton.setTextColor(context.getColor(R.color.green));
-            }
+            aggiungiTagButton.setClickable(!tagViewData.getDialogTags().isEmpty());
         });
     }
 
