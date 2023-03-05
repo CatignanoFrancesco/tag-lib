@@ -14,12 +14,12 @@ public interface TagStorage {
     Set<Tag> getAllTags();
     Set<Tag> getGeneralTags();
     Set<LanguageTag> getLanguageTags();
-    Set<LanguageTag> getPlaceLanguages(int placeId);
-    void addPlaceLanguages(int placeId, Set<LanguageTag> languageTags);
-    void deletePlaceLanguages(int placeId, Set<LanguageTag> languageTags);
-    Set<Tag> getPathTags(int pathId);
-    void addPathTags(int pathId, Set<Tag> tags);
-    void deletePathTags(int pathId, Set<Tag> tags);
+    Set<LanguageTag> getPlaceLanguages(Object placeId);
+    void addPlaceLanguages(Object placeId, Set<LanguageTag> languageTags);
+    void deletePlaceLanguages(Object placeId, Set<LanguageTag> languageTags);
+    Set<Tag> getPathTags(Object pathId);
+    void addPathTags(Object pathId, Set<Tag> tags);
+    void deletePathTags(Object pathId, Set<Tag> tags);
     void updateTag(Tag tag);
-    void deleteTagById(int id);
+    void deleteTagById(Object id);
 }
